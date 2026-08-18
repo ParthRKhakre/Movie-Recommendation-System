@@ -18,7 +18,9 @@ import streamlit as st
 # =============================================================================
 # CONFIG
 # =============================================================================
-API_BASE = os.getenv("API_BASE", "https://movie-rec-466x.onrender.com").rstrip("/")
+API_BASE = os.getenv(
+    "API_BASE", "https://movierecommendationsystem-1-czhe.onrender.com"
+).rstrip("/")
 TMDB_IMG = "https://image.tmdb.org/t/p/w500"
 TMDB_IMG_LG = "https://image.tmdb.org/t/p/w1280"
 

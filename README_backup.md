@@ -86,17 +86,8 @@ pip install -r requirements.txt
 Start the FastAPI server:
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
-
-> **Note:** the module is `main`, not `app.main` — there is no `app/`
-> package in this repo. On Render, set the Start Command to:
->
-> ```bash
-> uvicorn main:app --host 0.0.0.0 --port $PORT
-> ```
->
-> and set `TMDB_API_KEY` in the Environment tab (`.env` is gitignored).
 
 The API will be available at:
 
@@ -140,9 +131,3 @@ The API returns a list of movies with similar content.
 
 * [LinkedIn](https://www.linkedin.com/in/parth-khakre/)
 * [GitHub](https://github.com/ParthRKhakre)
-
-## 🎬 Run the UI
-
-```bash
-streamlit run streamlit_app.py
-```
