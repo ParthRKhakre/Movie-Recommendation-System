@@ -76,11 +76,6 @@ class TMDBMovieDetails(BaseModel):
     poster_url: Optional[str] = None
     backdrop_url: Optional[str] = None
     genres: List[dict] = []
-    # --- extras consumed by the Streamlit detail page (all optional) ---
-    tagline: Optional[str] = None
-    runtime: Optional[int] = None
-    vote_average: Optional[float] = None
-    vote_count: Optional[int] = None
 
 
 class TFIDFRecItem(BaseModel):
@@ -162,10 +157,6 @@ async def tmdb_movie_details(movie_id: int) -> TMDBMovieDetails:
         poster_url=make_img_url(data.get("poster_path")),
         backdrop_url=make_img_url(data.get("backdrop_path")),
         genres=data.get("genres", []) or [],
-        tagline=data.get("tagline") or None,
-        runtime=data.get("runtime"),
-        vote_average=data.get("vote_average"),
-        vote_count=data.get("vote_count"),
     )
 
 
